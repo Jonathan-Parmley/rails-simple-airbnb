@@ -1,1 +1,30 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
 @import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+
+.overlap {
+  transform: translateY(-80px);
+}
+
+.cover {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+
+.card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}

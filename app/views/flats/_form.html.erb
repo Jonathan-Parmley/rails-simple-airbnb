@@ -1,0 +1,16 @@
+<div class="card bg-light rounded">
+  <div class="card-body">
+    <%= simple_form_for(@flat) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :number_of_guests %>
+      <%= f.input :price_per_night %>
+      <%= f.input :image %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+    <div class="mt-2">
+      <%= link_to 'Back', flats_path %>
+    </div>
+  </div>
+</div>

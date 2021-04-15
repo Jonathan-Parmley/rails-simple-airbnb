@@ -1,1 +1,28 @@
-<h1>All our Flats (<%= @flats.count %>)</h1>
+<div class="container">
+  <h2 class="mx-2 mb-2 mt-4">All our Flats (<%= @flats.count %>)</h1>
+  <div class="col-md">
+    <div class="row">
+      <% @flats.each do |f| %>
+        <div class="card bg-light m-2 shadow-sm" style="width: 18rem;">
+          <%= image_tag f.image, class: "card-image card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= f.name %></h5>
+            <p><%= f.address %></p>
+            <i class="fas fa-user-friends"></i> <%= f.number_of_guests %>
+            <i class="fas fa-euro-sign"></i> <%= f.price_per_night %>
+          </div>
+          <div class="card-footer bg-white">
+            <%= link_to 'More info', flat_path(f) %>
+            <%= link_to 'Edit', edit_flat_path(f), class: 'text-warning' %>
+            <%= link_to "Remove",
+                  flat_path(f),
+                  method: :delete,
+                  data: { confirm: "Are you sure" }, class: 'text-danger' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
